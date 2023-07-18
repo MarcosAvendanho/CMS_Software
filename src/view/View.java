@@ -10,7 +10,7 @@ package view;
  */
 public class View {
     public static void showInvoice(){
-        Invoice x = new Invoice();
+        Invoice_maker x = new Invoice_maker();
         x.setVisible(true);
     }
     public static void showLogIn(){

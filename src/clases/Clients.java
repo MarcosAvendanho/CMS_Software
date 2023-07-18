@@ -12,7 +12,7 @@ import java.util.Date;
  * @author marcosfa
  */
 public class Clients {
-    String dni ;
+    String nif ;
     String name ;
     String apellidos;
     float descuento;
@@ -29,7 +29,7 @@ public class Clients {
 
     /**
      * Constructor of the object Client with all params
-     * @param dni
+     * @param nif
      * @param name
      * @param apellidos
      * @param descuento
@@ -40,8 +40,8 @@ public class Clients {
      * @param address
      * @param phone
      */
-    public Clients(String dni, String name, String apellidos, float descuento, String country, int n_orders, Date inscription_date, String postal_code, String address, String phone) {
-        this.dni = dni;
+    public Clients(String nif, String name, String apellidos, float descuento, String country, int n_orders, Date inscription_date, String postal_code, String address, String phone) {
+        this.nif = nif;
         this.name = name;
         this.apellidos = apellidos;
         this.descuento = descuento;
@@ -56,12 +56,12 @@ public class Clients {
 
     }
 
-    public String getDni() {
-        return dni;
+    public String getNif() {
+        return nif;
     }
 
-    public void setDni(String dni) {
-        this.dni = dni;
+    public void setNif(String nif) {
+        this.nif = nif;
     }
 
     public String getName() {
@@ -140,7 +140,7 @@ public class Clients {
     @Override
     public String toString() {
         return "Clients{" +
-                "dni='" + dni + '\'' +
+                "dni='" + nif + '\'' +
                 ", name='" + name + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", descuento=" + descuento +

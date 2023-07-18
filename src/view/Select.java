@@ -42,7 +42,7 @@ public class Select extends javax.swing.JFrame {
         btn_invoice.setBackground(new java.awt.Color(114, 163, 212));
         btn_invoice.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
         btn_invoice.setForeground(new java.awt.Color(0, 0, 0));
-        btn_invoice.setText("Invoice");
+        btn_invoice.setText("Invoice_maker");
         btn_invoice.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         btn_invoice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

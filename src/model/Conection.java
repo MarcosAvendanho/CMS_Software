@@ -8,6 +8,7 @@ package model;
 //we must import the following libraries:
 import clases.Clients;
 import clases.Employe;
+import clases.Invoice;
 import com.sun.source.tree.WhileLoopTree;
 
 import java.sql.Connection;
@@ -88,7 +89,7 @@ public class Conection {
     }
     
     
-    public void getClientes(String NIF){
+    public void getClientes(){
         //get the conection with the database
         this.conect = getConection();
         
@@ -99,18 +100,18 @@ public class Conection {
            ResultSet result = statement.executeQuery();
            //now we have to iterate the result of the query
             while(result.next()){
-                String dni = result.getString("dni");
+                String nif = result.getString("nif");
                 String name = result.getString("nombre");
                 String surname = result.getString("apellidos");
                 float discount = result.getFloat("descuento");
-                String country = result.getString("nacionaldiad");
+                String country = result.getString("nacionalidad");
                 int n_orders = result.getInt("n_pedidos");
                 Date inscription_date = result.getDate("fecha_inscripcion");
                 String postal_code = result.getString("codigo_postal");
                 String address = result.getString("direccion");
                 String phone = result.getString("telefono");
 
-                Clients client = new Clients(dni,name,surname,discount,country,n_orders,inscription_date,postal_code,address,phone);
+                Clients client = new Clients(nif,name,surname,discount,country,n_orders,inscription_date,postal_code,address,phone);
                 Clients.clients.add(client);
                 System.out.println(client);
 
@@ -125,9 +126,25 @@ public class Conection {
         
     }
 
+    /**
+     * Method that calls a Procedure on SQL that returns the data of the invoices
+     * @param  nif client to search
+     * @return an object type Invoice with all the data set
+     */
+    public Invoice getInvoice(String nif) {
+        conect = getConection();
+        Invoice x = new Invoice();
+        try{
+            PreparedStatement statement = conect.prepareStatement("call pfacturas(nif) ");//aun no está hecho el procedimiento
+            ResultSet result = statement.executeQuery();
+            //have to set all the parameters on invoice
 
-    public Boolean FindClients(String dni,String invoiceID){
-        return true;
+
+
+        }catch (SQLException e){
+            System.out.println("There was a problema trying to make the query " + e.getMessage());
+        }
+        return x;
     }
     
     

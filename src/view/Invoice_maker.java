@@ -4,16 +4,18 @@
  */
 package view;
 
+import controller.Controller;
+
 /**
  *
  * @author marcosfa
  */
-public class Invoice extends javax.swing.JFrame {
+public class Invoice_maker extends javax.swing.JFrame {
 
     /**
      * Creates new form Facturas
      */
-    public Invoice() {
+    public Invoice_maker() {
         initComponents();
     }
 
@@ -548,6 +550,9 @@ public class Invoice extends javax.swing.JFrame {
 
     private void txt_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_searchActionPerformed
         // TODO add your handling code here:
+        Integer n_invoice = Integer.parseInt( txt_ninvoice.getText());
+        Controller.searchInvoice(txt_search.getText(),n_invoice);
+
 
     }//GEN-LAST:event_txt_searchActionPerformed
 
@@ -580,13 +585,13 @@ public class Invoice extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Invoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Invoice_maker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Invoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Invoice_maker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Invoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Invoice_maker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Invoice.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Invoice_maker.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -594,7 +599,7 @@ public class Invoice extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Invoice().setVisible(true);
+                new Invoice_maker().setVisible(true);
             }
         });
     }

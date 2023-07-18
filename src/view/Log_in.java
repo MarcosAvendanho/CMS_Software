@@ -21,6 +21,7 @@ public class Log_in extends javax.swing.JFrame {
         initComponents();
         Conection x = new Conection();
         x.getEmpleados();
+        x.getClientes();
     }
 
     /**
@@ -160,8 +161,8 @@ public class Log_in extends javax.swing.JFrame {
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:
-       Controller y = new Controller();
-       y.login(txt_username.getText(), txt_password);
+
+       Controller.login(txt_username.getText(), txt_password);
     }//GEN-LAST:event_btn_loginActionPerformed
 
     /**

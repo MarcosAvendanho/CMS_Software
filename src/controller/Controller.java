@@ -15,7 +15,7 @@ import view.View;
 public class Controller {
     
     
-    public void login(String user, JPasswordField pwd){
+    public static void login(String user, JPasswordField pwd){
         
         char[] characters = pwd.getPassword();
 
@@ -36,6 +36,16 @@ public class Controller {
 
     }
 
+    public static void searchInvoice(String nif,Integer n_invoice){
+
+        if (n_invoice != null){
+
+        }
+    }
+    /**
+     * Main Method
+     * @param args arguments
+     */
     public static void main(String[] args) {
         View.showLogIn();
 

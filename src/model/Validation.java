@@ -36,7 +36,17 @@ public class Validation {
         }
         return found;
     }
-    
+
+
+    //maybe should i delete that
+    public Boolean getInvoice(String nif,Integer n_invoice){
+        return true;
+    }
+
+
+
+
+
     //para terminar más tarde
     public Boolean signUpEmploye(String name){
         return true;

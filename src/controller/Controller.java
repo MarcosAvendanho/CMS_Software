@@ -33,7 +33,7 @@ public class Controller {
         if(loged){
             View.showSelect();
         }
-        kifka1-siQtup-jabgam
+
     }
 
     public static void main(String[] args) {

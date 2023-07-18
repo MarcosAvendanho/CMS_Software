@@ -14,7 +14,12 @@ import java.util.ArrayList;
 public class Validation {
     
     
-    
+    /**
+     * Method that search on our ArrayList of employes Username and Password and if it fits, the will give you acces to the app
+     * @param dni Username
+     * @param pwd Password
+     * @return True or False
+     */
     public Boolean logIn(String dni,String pwd){
         Boolean found = false;
         for (int i = 0; i < Employe.employees.size(); i++) {
@@ -31,10 +36,15 @@ public class Validation {
         }
         return found;
     }
-
+    
+    //para terminar más tarde
     public Boolean signUpEmploye(String name){
         return true;
     }
+
+
+    
+    
   
     
 }

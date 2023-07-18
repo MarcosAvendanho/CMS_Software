@@ -6,13 +6,18 @@ package model;
 
 
 //we must import the following libraries:
+import clases.Clients;
 import clases.Employe;
+import com.sun.source.tree.WhileLoopTree;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Date;
+
 /**
  *  Model methods conection with database
  *  besides insert, delete
@@ -32,13 +37,8 @@ public class Conection {
     
     //important to define the variable connection
     private Connection conect = null;
-    /**
-     * This method connect us to the database
-     * @param database name to stablish conection
-     * @param ip if its localhost or a foreing server
-     * @param port which make tghe conection on;
-     * @return the connection
-     */
+
+
     public Connection getConection(){
         this.url = "jdbc:postgresql://"+this.ip+":"+this.port+"/"+this.database;
        try{
@@ -97,12 +97,37 @@ public class Conection {
            PreparedStatement statement = conect.prepareStatement("Select * from empresa.clientes");
            //get the result of the query and saved on the variable result
            ResultSet result = statement.executeQuery();
+           //now we have to iterate the result of the query
+            while(result.next()){
+                String dni = result.getString("dni");
+                String name = result.getString("nombre");
+                String surname = result.getString("apellidos");
+                float discount = result.getFloat("descuento");
+                String country = result.getString("nacionaldiad");
+                int n_orders = result.getInt("n_pedidos");
+                Date inscription_date = result.getDate("fecha_inscripcion");
+                String postal_code = result.getString("codigo_postal");
+                String address = result.getString("direccion");
+                String phone = result.getString("telefono");
+
+                Clients client = new Clients(dni,name,surname,discount,country,n_orders,inscription_date,postal_code,address,phone);
+                Clients.clients.add(client);
+                System.out.println(client);
+
+
+
+            }
            
            
         }catch(SQLException e){
             System.out.println("" +e.getMessage());
         }
         
+    }
+
+
+    public Boolean FindClients(String dni,String invoiceID){
+        return true;
     }
     
     
